@@ -1,13 +1,19 @@
 package example1;
-class ExcDemo1 {
-    public static void main(String args[]) {
+class ExcTest {
+    static void genException() {
         int nums[] = new int[4];
 
+        //Generate an index out-of-bounds exception.
+        nums[7] = 10;
+    }
+}
+
+class ExcDemo1 {
+    public static void main(String args[]) {
+    
         try {
             System.out.println("Before exception is generated.");
-
-            //Generate an index out-of-bounds exception.
-            nums[7] = 10;
+            ExcTest.genException();
         }
         catch (ArrayIndexOutOfBoundsException exc) {
             //cathc exception
